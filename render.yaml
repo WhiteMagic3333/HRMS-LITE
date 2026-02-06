@@ -1,0 +1,20 @@
+# Render Blueprint (optional). If Render asks for payment when using Blueprint,
+# use MANUAL deployment instead: New + → Web Service (not Blueprint). See README "Deploy Backend (Render)".
+#
+# Uses SQLite on ephemeral disk. After deploy, set CORS_ORIGINS in Environment to your frontend URL.
+
+services:
+  - type: web
+    name: hrms-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn hrms.wsgi --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: CORS_ORIGINS
+        sync: false
+        # Set in Render dashboard → Environment to your frontend URL, e.g. https://hrms-lite.vercel.app
