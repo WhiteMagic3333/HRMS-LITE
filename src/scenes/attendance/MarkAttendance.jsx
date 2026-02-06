@@ -16,7 +16,12 @@ import Header from "../../components/Header";
 import { tokens } from "../../theme";
 import { fetchAttendanceByDate, setBulkAttendance } from "../../api/attendanceApi";
 
-const formatDateForInput = (d) => d.toISOString().slice(0, 10);
+const formatDateForInput = (d) => {
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+};
 
 // Map backend status to display string
 const statusDisplay = (status) => {
