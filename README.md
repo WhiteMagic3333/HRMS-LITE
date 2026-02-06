@@ -4,6 +4,14 @@
 
 A web-based HR Management System for managing employee records and tracking daily attendance.
 
+## NOTE
+   - The page might not show data for about 30-40 seconds of page load.
+   - Since I am using free tier of render for backend services. Page might not show data for about a min, since backend services are being redeployed after 15 minutes of inactivity or more.
+
+## Assumptions
+   - Deleted Employee info can only be viewed from Manage Attendance -> Employee Attendance Details.
+   - Employee is only shown for attendance if he's not deleted and was create before or on the same date.
+
 ## Features
 
 - **Employee Management**
@@ -16,14 +24,6 @@ A web-based HR Management System for managing employee records and tracking dail
   - Bulk attendance marking for multiple employees
   - View individual employee attendance calendar
   - Track present/absent day statistics
-
-## NOTE
-   - The page might not show data for about 30-40 seconds of page load.
-   - Since I am using free tier of render for backend services. Page might not show data for about a min, since backend services are being redeployed after 15 minutes of inactivity or more.
-
-## Assumptions
-   - Deleted Employee info can only be viewed from Manage Attendance -> Employee Attendance Details
-   - Employee is only shown for attendance if he's not deleted and was create before or on the same date
 
 ## Tech Stack
 
